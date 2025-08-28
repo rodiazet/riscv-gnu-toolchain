@@ -49,16 +49,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:       [ubuntu-22.04, ubuntu-24.04]
-        mode:     [newlib, linux, musl, uclibc]
-        target:   [rv32gc-ilp32d, rv64gc-lp64d]
-        compiler: [gcc, llvm]
-        exclude:
-          - mode: musl
-            compiler: llvm
-
-          - mode: uclibc
-            compiler: llvm
+        os: [ ubuntu-24.04 ]
+        mode: [ newlib, linux ]
+        target: [ rv32im-ilp32 ]
+        compiler: [ llvm ]
     steps:
       - uses: actions/checkout@v4
 
